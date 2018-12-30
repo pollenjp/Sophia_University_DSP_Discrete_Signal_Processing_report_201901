@@ -1,4 +1,4 @@
-# DSP_Discrete_Signal_Processing
+# Sophia_University_DSP_Discrete_Signal_Processing_report_201901
 
 ## 内容
 
