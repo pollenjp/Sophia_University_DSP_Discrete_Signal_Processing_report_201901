@@ -118,9 +118,9 @@
             &= 2 (1 + \cos (\omega)) \\
         \end{align*}
         
-        これらの計算式により算出された $H(e^{j \omega}) = 2 (1 + \cos (\omega))$ をプロットするコードを以下に示す.
+        これらの計算式により算出された $| H(e^{j \omega}) | = 2 (1 + \cos (\omega))$ をプロットするコードを以下に示す.
         プロットは図\ref{img-frequency_property_of_an_ideal_filter}に示す.
-        
+				( $y=1.0$ に直線を引いたのは後の考察で比較する際にわかりやすくするためである.)
 %--------------------------------------------------------------------------------
 %--------------------------------------------------------------------------------
         \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
@@ -225,7 +225,7 @@ matplotlib.rcParams['text.usetex']=False
         まずは周波数を1000Hzから7000Hzまでを100Hz刻みで取得し,各周波数に対して畳み込み処理を施す.
         \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 fs = 16000              # サンプリング周波数:16kHz
-t = np.arange(fs) / fs  # 離散時間 (１秒間)
+t = np.arange(fs) / fs  # 離散時間（１秒間）
 
 freqs = list(np.arange(1000, 7001, 100))  # frequencyn
 x_list = [ np.sin(2*np.pi*freq*t) for freq in freqs ]
@@ -254,7 +254,6 @@ for freq, x in zip(freqs, x_list):
 				\end{align*}
 				
 				コードとプロット(図\ref{img-frequency_property_from_each_freq})を以下に示す.
-				( $y=1.0$ に直線を引いたのは後の考察で比較する際にわかりやすくするためである.)
 				
         \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 # 振幅倍率
